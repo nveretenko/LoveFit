@@ -1,0 +1,39 @@
+#map {
+  height: 500px;
+}
+
+.map {
+  position: relative;
+  margin-top: 50px;
+  padding-top: 30px;
+  background-color: #0a0432;
+  &__item {
+    text-align: center;
+    p {
+      margin-bottom: 0;
+      color: $white;
+    }
+  }
+  &__img {
+    width: 20%;
+    margin: 0 auto 25px;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  .col {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  h2 {
+    @extend %customH2;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: $white;
+    &:before {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

@@ -1,0 +1,45 @@
+
+.slick-slide img {
+  width: 230px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.slick-next, .slick-prev {
+  background-color: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transform: translateY(25%);
+  &:before {
+    color: #000;
+  }
+  &:hover {
+    background-color: $orange;
+  }
+  &:focus {
+    background-color: #fff;
+  }
+}
+
+.slick-next {
+  right: 0;
+}
+
+.slick-prev {
+  left: 0;
+  z-index: 10;
+}
+
+@media (min-width: 768px) {
+  #trainerPopup {
+    width: 400px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .slick-prev, .slick-next {
+    top: 40%;
+  }
+}

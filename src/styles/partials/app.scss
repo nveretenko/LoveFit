@@ -1,0 +1,586 @@
+@import "carousel";
+@import "myVariables";
+@import "fonts";
+@import "go_top";
+@import "validation";
+@import "quiz";
+@import "photo";
+@import "map";
+@import "header";
+@import "footer";
+@import "media-queries";
+@import "mySlick";
+
+
+h3 {
+  font-family: 'pt_sans_narrowbold';
+  text-transform: uppercase;
+}
+
+ul {
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+a {
+  color: $white;
+  &:hover {
+    color: $white;
+    text-decoration: none;
+    transition: 0.5s;
+  }
+}
+
+svg {
+  fill: currentcolor;
+  width: 100%;
+  height: 100%;
+}
+
+button {
+  transition: 0.5s;
+  &:hover {
+    transition: 0.5s;
+  }
+}
+
+input {
+  transition: 0.5s;
+  &:hover {
+    transition: 0.5s;
+  }
+}
+
+%img-absolute {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+%customH2 {
+  position: relative;
+  margin-top: 50px;
+  font-family: 'pt_sans_narrowbold';
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  line-height: 1.2;
+  &:before {
+    @extend %customH2Before;
+  }
+}
+
+%customH2Before {
+  content: '';
+  display: inline-block;
+  width: 40px;
+  height: 5px;
+  background-color: $yellow;
+  position: absolute;
+  top: -35px;
+}
+
+.pre {
+  white-space: pre-line;
+}
+
+.z-index {
+  z-index: 10;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.comments-top {
+  position: relative;
+  padding-top: 50px;
+  padding-left: 0;
+  padding-right: 0;
+  .col {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  h2 {
+    @extend %customH2;
+    text-align: center;
+    margin-bottom: 40px;
+    &:before {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.card {
+  margin: 10px 0;
+  h3 {
+    margin-left: 15px;
+  }
+  &-button {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background-color: $orange;
+    color: $white;
+    border: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    &:hover {
+      background-color: #f89b4e;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  &-content {
+    background-color: $white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    p {
+      margin-left: 10px;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+    .check_circle_icon {
+      position: inherit;
+      display: inline-block;
+      svg {
+        width: 20px;
+      }
+    }
+    &-block {
+      display: flex;
+      padding-left: 10px;
+      color: #777;
+    }
+  }
+  .img-container {
+    position: inherit;
+    padding-bottom:inherit ;
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+}
+
+.card-content .price {
+  color: $orange;
+  font-size: 1.4rem ;
+}
+
+.subscription {
+  margin-bottom: 50px;
+  padding-top: 50px;
+  .col-lg-4 {
+    margin-bottom: 2rem;
+  }
+  h2 {
+    @extend %customH2;
+  }
+  &-img {
+    @extend %img-absolute;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &-container-img {
+    position: relative;
+    padding-bottom: 40%;
+    width: 40%;
+    height: 0;
+    opacity: .8;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  &__item {
+    display: flex;
+    label {
+      width: 100%;
+      height: 100%;
+      span {
+        position: absolute;
+        top: -5%;
+        right: -5%;
+        display: none;
+        width: 2rem;
+        height: 2rem;
+        color: $white;
+        background-color: $orange;
+      }
+      input {
+        display: none;
+      }
+      input[type='radio']:checked ~ span {
+        display: inline-block;
+      }
+    }
+  }
+  &-title p {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 1rem;
+  }
+}
+
+.ready-subscriptions {
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  h2 {
+    @extend %customH2;
+    margin-bottom: 40px;
+    color: $white;
+  }
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+    transition: all ease 0.4s;
+    &:hover {
+      transform: scale(1.35);
+      transition: all ease 0.4s;
+    }
+  }
+}
+
+.form-control_subscription {
+  color: $white;
+  background-color: $orange;
+  + p {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  &:hover {
+    color: $orange;
+    background-color: $white;
+  }
+}
+
+.personal-data {
+  font-size: 0.8rem;
+  margin-bottom: 0;
+  margin-left: 10px;
+  &__item {
+    text-decoration: underline;
+  }
+}
+
+.tour {
+  padding-top: 50px;
+  h2 {
+    @extend %customH2;
+    margin-bottom: 50px;
+  }
+  &__item {
+    position: relative;
+    margin-left: 30px;
+  }
+  form {
+    margin-top: 50px;
+  }
+}
+
+.trainers {
+  @extend .photo;
+  padding-bottom: 0;
+  h2 {
+    @extend %customH2;
+    text-align: center;
+    margin-bottom: 50px;
+    &:before {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.check_circle_icon {
+  position: absolute;
+  top: 0;
+  left: -30px;
+  width: 20px;
+  height: 20px;
+}
+
+.img-container {
+  position: relative;
+  padding-bottom: 60%;
+  &__item {
+    @extend %img-absolute;
+  }
+  &:nth-of-type(n+7){
+    padding-bottom: 90%;
+  }
+}
+
+.img-overlay {
+  @extend %img-absolute;
+  opacity: 0;
+  background: radial-gradient(circle, rgba(51, 51, 51, 0.8) 30px,
+          rgba(0, 0, 0, 0.4) 31px, rgba(0, 0, 0, 0.4) 60px, rgba(255, 166, 36, 0.2) 61px);
+}
+
+.img-inner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-hover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  color: white;
+}
+
+.pilot-training {
+  background: url("../images/G-mobile.webp") no-repeat center 15%;
+  background-size: cover;
+  margin-top: 70px;
+  outline: 1px solid $white;
+  outline-offset: -20px;
+  z-index: 20;
+  &__item {
+    padding: 70px 20px;
+  }
+  h3 {
+    color: $white;
+    text-align: center;
+  }
+  .form-control {
+    @extend .free-workout;
+    margin: 0 auto;
+    border-radius: 0;
+    border: none;
+    width: 60%;
+  }
+}
+
+.content {
+  position: relative;
+  &-overlay {
+    @extend %img-absolute;
+    background-color: $white;
+    opacity: 0.85;
+  }
+  h2 {
+    @extend %customH2;
+  }
+  h4 {
+    margin-top: 50px;
+  }
+  .col-md-8 {
+    padding-top: 50px;
+  }
+}
+
+.hidden-switch {
+  display: none;
+  &:checked + .hidden-ticker > .toggler {
+    transform: rotate(45deg);
+    color: $red;
+    margin-bottom: 0.8rem;
+    &:hover {
+      box-shadow: 0 0 10px 1px $red;
+    }
+  }
+  &:checked ~ .description {
+    display: block;
+  }
+}
+
+.hidden-ticker {
+  position: absolute;
+  bottom: 85%;
+  margin-bottom: 0;
+}
+
+.description {
+  display: none;
+}
+
+.toggler {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  color: $green;
+  &:hover {
+    border-radius: 50%;
+    box-shadow: 0 0 10px 1px $green;
+  }
+}
+
+.about {
+  position: relative;
+  margin-top: 70px;
+  padding-left: 15%;
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  background: #f1a317;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.sport-icon {
+  position: absolute;
+  right: 85%;
+  display: flex;
+  width: 50px;
+  height: 50px;
+  svg {
+    margin: auto;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.gymnast-top {
+  @extend %img-absolute;
+}
+
+.img-gymnast-top {
+  max-width: 100%;
+  transform: scale(1.35);
+}
+
+.social {
+  display: flex;
+  align-items: flex-end;
+  color: $white;
+  li {
+    margin-right: 5px;
+  }
+  &-svg {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    background-color: $blue-darken;
+    border-radius: 50%;
+    svg {
+      display: inline-block;
+      margin: auto;
+      width: 15px;
+      height: 15px;
+    }
+  }
+  &>li:last-child .social-svg {
+    background-color: darken($red, 20%);
+  }
+}
+
+.pilot-training .form-group {
+  margin-bottom: 0;
+  .form-control {
+    height: 2.5rem;
+  }
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-control {
+  height: 3.5rem;
+  margin-bottom: 10px;
+  &-inner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    width: 3.5rem;
+    height: 3.5rem;
+    svg {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin: auto;
+    }
+  }
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  opacity: 1;
+  height: 54px;
+  cursor: pointer;
+}
+
+.form-tour {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.gymnast-left {
+  z-index: 100;
+}
+
+.gymnast-right {
+  img {
+    transform: scale(1.25);
+  }
+}
+
+.logo {
+  color: darken($yellow, 10%);
+  font-size: 2.25rem;
+  &__item {
+    font-weight: 700;
+    color: $yellow;
+    span {
+      color: $red;
+    }
+  }
+  &-text {
+    padding-right: 20px;
+  }
+}
+
+.top-overlay {
+  @extend %img-absolute;
+  background-color: #0A0432;
+  opacity: 0.85;
+}
+
+.callback {
+  margin-left: 20px;
+  background-color: $yellow;
+  border-radius: inherit;
+  color: $white;
+  padding: 0.85rem 1rem;
+  font-size: 0.8rem;
+  &:hover {
+    color: initial;
+  }
+}
+
+.free-workout {
+  flex-basis: 36%;
+  font-size: 1rem;
+  color: $white;
+  text-align: center;
+  background-color: $yellow;
+  &:hover {
+    color: $yellow;
+    background-color: $white;
+  }
+}

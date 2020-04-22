@@ -1,0 +1,345 @@
+
+/*********************CAROUSEL TRAINERS**********************************/
+
+.trainers .carousel {
+  margin: 0 auto;
+  max-width: 250px;
+  &__caption {
+    color: $white;
+    text-align: center;
+    padding-top: 20px;
+    h3 + p {
+      margin-bottom: 0;
+    }
+    button {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      padding-top: 1em;
+      padding-bottom: 1em;
+      color: #dddddd;
+      width: 100%;
+      background-color: transparent;
+      &:hover {
+        color: $white;
+        background-color: $orange;
+      }
+    }
+  }
+  &__link {
+    color: $orange;
+    border-bottom: 1px dashed;
+  }
+  &__item {
+    width: 250px;
+    padding: 10px 10px  0;
+    line-height: 1;
+  }
+}
+
+#trainerPopup {
+  position: fixed;
+  display: none;
+  top: 46%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 260px;
+  border-radius: 5px;
+  padding: 5px 25px;
+  text-align: center;
+  background-color: $light;
+  z-index: 100;
+  input {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px 25px;
+  }
+  textarea {
+    width: 100%;
+    padding-left: 25px;
+  }
+}
+
+.overlayPopup {
+  position: fixed;
+  display: none;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 99;
+}
+
+.submit {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 100%;
+  font-size: 1.25rem;
+  background-color: $blue;
+  &:hover {
+    color: #ffffff;
+  }
+}
+
+.modal-close {
+  display: inline-block;
+  padding: 10px;
+  margin-left: calc(100% - 44px);
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 991px) {
+  .trainers .carousel {
+    max-width: 600px;
+    &__item {
+      margin-right: 100px;
+    }
+  }
+
+  .carousel__caption button {
+    color: $orange;
+    border: 1px solid;
+    background-color: transparent;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .trainers .carousel {
+    max-width: 750px;
+    &__item {
+      margin-right: inherit;
+    }
+  }
+}
+
+/************************CAROUSEL COMMENTS***************************/
+
+.carousel {
+  display:     flex;
+  height:      620px;
+  overflow:    hidden;
+
+  &__i {
+    position:       relative;
+    display:        flex;
+    flex-direction: column;
+    width:          100%;
+  }
+  &__image {
+    flex:            none;
+    object-fit:      cover;
+    height:          300px;
+    z-index: 10;
+  }
+  &__comments {
+    flex:          auto;
+    display:       flex;
+    align-items:   flex-end;
+    width:         100%;
+    margin-top:    0;
+    margin-bottom: 0;
+    padding-left:  0;
+    list-style:    none;
+    margin-left: 100%;
+    z-index: -1;
+  }
+  &__comment {
+    flex:       none;
+    width:      100%;
+    text-align: center;
+    &-name {
+      font: 1rem 'pt_sans_narrowbold', Arial, Verdana, sans-serif;
+    }
+  }
+}
+
+.carousel__comment_state_active .carousel__comment-name {
+  font: 1.25rem 'pt_sans_narrowbold', Arial, Verdana, sans-serif;
+}
+
+.carousel__comment_state_prev,
+.carousel__comment_state_next {
+  width: 50%;
+}
+
+.carousel__comment_state_next:nth-child(2) {
+  margin-left: -50%;
+}
+
+.carousel__comment_state_active {
+  position:   absolute;
+  top:        300px;
+  left:       0;
+  box-sizing: border-box;
+  padding:    1em;
+  .carousel__comment-date {
+    line-height: 0;
+    font-size:   0;
+  }
+  .carousel__comment-text {
+    line-height: inherit;
+    font-size:   inherit;
+  }
+}
+
+.carousel__comment-text {
+  line-height: 0;
+  font-size:   0;
+}
+
+.carousel__button {
+  position:         absolute;
+  bottom:           6em;
+  width:            4em;
+  height:           4em;
+  border-radius:    100vmax;
+  border:           none;
+  background-color: #eee;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    color:            white;
+    background-color: $orange;
+  }
+}
+
+.carousel__button.disabled {
+  background-color: $gray-400;
+  color: $gray-100;
+  &:hover {
+    background-color: $gray-400;
+    color: $gray-100;
+  }
+}
+
+.carousel__button_action_prev {
+  left:      25%;
+  transform: translateX(-50%);
+}
+
+.carousel__button_action_next {
+  right:     25%;
+  transform: translateX(50%);
+}
+
+.btn_comment {
+  margin-top: 40px;
+  padding: 10px 20px;
+  width: 50%;
+  height: 3.5rem;
+  background-color: $orange;
+  color: $white;
+  border: 1px solid transparent;
+  &:hover {
+    color: $orange;
+    border-color: inherit;
+    background-color: $white;
+  }
+}
+
+.carousel__button span {
+  font-size: 2rem;
+}
+
+.carousel__image:hover {
+  filter: hue-rotate(45deg);
+}
+
+/*****************************************************************/
+
+@media only screen and (min-width: 768px) {
+  #trainerPopup {
+    width: 400px;
+  }
+
+  .carousel,
+  .carousel__i {
+    margin-right: auto;
+    margin-left:  auto;
+  }
+
+  .carousel {
+    height: 450px;
+  }
+
+  .carousel__i {
+    flex-direction: row;
+    margin-right:   10em;
+    margin-left:    10em;
+  }
+
+  .carousel__image {
+    width: 100%;
+  }
+
+  .carousel__comments {
+    align-items: center;
+    position:    absolute;
+    top:         0;
+    bottom:      0;
+    left:        -10em;
+  }
+
+  .carousel__comment_state_prev,
+  .carousel__comment_state_next {
+    width:      10em;
+    margin-top: 2em;
+  }
+
+  .carousel__comment_state_next:nth-child(2) {
+    margin-left: 0;
+  }
+
+  .carousel__comment_state_active {
+    position:   static;
+    align-self: flex-start;
+    margin-top: 300px;
+  }
+
+  .carousel__comment_state_active:first-child {
+    margin-left: calc(-100% + 10em);
+  }
+
+  .carousel__button {
+    top:        50%;
+    margin-top: -6em;
+  }
+
+  .carousel__button_action_prev {
+    left: -5em;
+  }
+
+  .carousel__button_action_next {
+    right: -5em;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .btn_comment {
+    width: 30%;
+  }
+
+  .carousel__comment_state_active .carousel__comment-text {
+    width: 55%;
+    margin: auto;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .carousel {
+    height:    550px;
+    max-width: 1400px;
+  }
+
+  .carousel__image {
+    height: 400px;
+  }
+
+  .carousel__comment_state_active {
+    margin-top: 400px;
+  }
+}

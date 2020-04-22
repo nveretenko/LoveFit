@@ -1,0 +1,39 @@
+footer {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  .social {
+    display: block;
+    text-align: center;
+    color: inherit;
+    li:first-child {
+      display: block;
+    }
+    li {
+      display: inline-block;
+    }
+  }
+  &.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.footer-logo {
+  @extend .header-logo;
+  p {
+    color: inherit;
+  }
+  a {
+    color: darken($yellow, 10%);
+    &:hover {
+      color: darken($yellow, 10%);
+    }
+  }
+}
+
+.footer-callback {
+  @extend .header-callback;
+  a[href^='tel'] {
+    color: inherit;
+  }
+}
